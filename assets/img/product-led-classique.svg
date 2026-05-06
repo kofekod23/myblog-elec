@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none">
+  <rect width="120" height="80" rx="6" fill="#FFFCE8"/>
+  <rect x="46" y="38" width="28" height="8" rx="2" fill="#F5A623" opacity="0.5"/>
+  <path d="M60 16 C50 16 44 22 44 30 C44 36 47 40 52 42 L68 42 C73 40 76 36 76 30 C76 22 70 16 60 16Z" fill="#F5A623" opacity="0.2" stroke="#F5A623" stroke-width="1.5"/>
+  <line x1="60" y1="10" x2="60" y2="14" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+  <line x1="48" y1="13" x2="50" y2="17" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+  <line x1="72" y1="13" x2="70" y2="17" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+  <line x1="40" y1="22" x2="44" y2="24" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="22" x2="76" y2="24" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/>
+  <rect x="50" y="46" width="20" height="4" rx="1" fill="#F5A623" opacity="0.4"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#8B6300" font-weight="600">LED</text>
+</svg>

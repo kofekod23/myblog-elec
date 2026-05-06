@@ -17,11 +17,13 @@
   /* Audiences */
   --aud-electriciens: #002855;
   --aud-plombiers: #006B5E;
+  --aud-climaticiens: #0077A8;
   --aud-integrateurs: #0057A8;
   --aud-partenaires: #4A90D9;
 
   /* Compat legacy */
   --aud-reseaux: #002855;
+  --aud-chauffagistes: #C05800;
   --aud-clients: #4A90D9;
 
   /* Neutres */
@@ -170,8 +172,8 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   background: var(--rexel-blue);
   border-radius: var(--r-sm);
 }
@@ -183,14 +185,14 @@ ul, ol { list-style: none; }
 }
 
 .logo-name {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--rexel-navy);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
 }
 
 .logo-tagline {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--gray-500);
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -225,6 +227,27 @@ ul, ol { list-style: none; }
   background: var(--rexel-blue-tint);
   font-weight: 600;
 }
+
+.nav-divider {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background: var(--gray-300);
+  margin: 0 6px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.nav a svg {
+  flex-shrink: 0;
+  opacity: 0.65;
+  transition: opacity var(--t-fast);
+}
+
+.nav a:hover svg,
+.nav a.active svg { opacity: 1; }
+
+.nav a span { white-space: nowrap; }
 
 /* Search */
 .header-search {
@@ -333,6 +356,16 @@ ul, ol { list-style: none; }
 .mobile-nav a:hover {
   background: var(--rexel-blue-tint);
   color: var(--rexel-blue);
+}
+
+.mobile-nav-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray-400);
+  padding: 16px 16px 4px;
+  margin: 0;
 }
 
 /* =========================================
@@ -654,6 +687,24 @@ ul, ol { list-style: none; }
   box-shadow: 0 12px 32px rgba(0, 107, 94, 0.4);
 }
 
+.audience-card.chauffagistes {
+  background: linear-gradient(135deg, var(--aud-chauffagistes), #E07820);
+  box-shadow: 0 4px 16px rgba(192, 88, 0, 0.3);
+}
+
+.audience-card.chauffagistes:hover {
+  box-shadow: 0 12px 32px rgba(192, 88, 0, 0.4);
+}
+
+.audience-card.climaticiens {
+  background: linear-gradient(135deg, var(--aud-climaticiens), #005F8A);
+  box-shadow: 0 4px 16px rgba(0, 119, 168, 0.3);
+}
+
+.audience-card.climaticiens:hover {
+  box-shadow: 0 12px 32px rgba(0, 119, 168, 0.4);
+}
+
 .audience-card.integrateurs {
   background: linear-gradient(135deg, var(--aud-integrateurs), #1A7AC8);
   box-shadow: 0 4px 16px rgba(0, 87, 168, 0.3);
@@ -842,6 +893,38 @@ ul, ol { list-style: none; }
   gap: 8px;
 }
 
+/* Fix overflow quand .article-card-footer est enfant direct de .article-card */
+.article-card > .article-card-footer {
+  padding: 14px 22px 18px;
+  margin-top: 0;
+}
+
+/* Point en fin de titre sur les cartes pointant vers un vrai article */
+.article-card[href^="article-"] .article-title::after {
+  content: " ●";
+  color: var(--rexel-blue);
+  font-size: 0.55em;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+/* Pastille "Article" sur les cartes pointant vers un article */
+.article-card[href^="article-"]::after {
+  content: "Article";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--rexel-blue);
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: var(--r-xs);
+  z-index: 2;
+}
+
 /* =========================================
    FEATURED LAYOUT
    ========================================= */
@@ -919,6 +1002,9 @@ ul, ol { list-style: none; }
 .badge-aud.integrateurs { background: var(--aud-integrateurs); }
 .badge-aud.clients,
 .badge-aud.partenaires { background: var(--aud-partenaires); }
+.badge-aud.chauffagistes { background: var(--aud-chauffagistes); }
+.badge-aud.eclairage { background: var(--aud-electriciens); }
+.badge-aud.climaticiens { background: var(--aud-climaticiens); }
 
 /* =========================================
    NEWSLETTER SECTION
@@ -1760,6 +1846,11 @@ ul, ol { list-style: none; }
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
+  justify-content: safe center;
+}
+
+@supports not (justify-content: safe center) {
+  .product-track { justify-content: flex-start; }
 }
 
 .product-track::-webkit-scrollbar { height: 4px; }
@@ -1767,7 +1858,8 @@ ul, ol { list-style: none; }
 .product-track::-webkit-scrollbar-thumb { background: var(--rexel-blue-pale); border-radius: 2px; }
 
 .product-card-mini {
-  flex: 0 0 180px;
+  flex: 1 0 160px;
+  max-width: 210px;
   scroll-snap-align: start;
   border: 1px solid var(--gray-200);
   border-radius: var(--r-md);
@@ -2009,4 +2101,62 @@ ul, ol { list-style: none; }
   line-height: 1.65;
   color: var(--gray-700);
   margin: 0;
+}
+
+/* =========================================
+   AUTEUR FICTIF REXEL
+   ========================================= */
+
+.author-link {
+  color: var(--rexel-blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+.author-link:hover { color: var(--rexel-navy); text-decoration: underline; }
+
+.author-role {
+  font-size: 12px;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+/* =========================================
+   NAV-SECONDARY — désactivée (nav unifiée)
+   ========================================= */
+
+.nav-secondary { display: none; }
+
+/* =========================================
+   TAGS ARTICLES
+   ========================================= */
+
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.article-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gray-600);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  padding: 2px 7px;
+  border-radius: var(--r-full);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background var(--t-fast), color var(--t-fast);
+  white-space: nowrap;
+}
+
+.article-tag:hover {
+  background: var(--rexel-blue-tint);
+  color: var(--rexel-blue);
+  border-color: var(--rexel-blue-pale);
+  text-decoration: none;
 }

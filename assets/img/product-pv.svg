@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none">
+  <rect width="120" height="80" rx="6" fill="#E8F3FF"/>
+  <rect x="20" y="18" width="36" height="24" rx="2" fill="#003D7C" opacity="0.15" stroke="#003D7C" stroke-width="1.5"/>
+  <line x1="29" y1="18" x2="29" y2="42" stroke="#003D7C" stroke-width="1" opacity="0.5"/>
+  <line x1="38" y1="18" x2="38" y2="42" stroke="#003D7C" stroke-width="1" opacity="0.5"/>
+  <line x1="47" y1="18" x2="47" y2="42" stroke="#003D7C" stroke-width="1" opacity="0.5"/>
+  <line x1="20" y1="28" x2="56" y2="28" stroke="#003D7C" stroke-width="1" opacity="0.5"/>
+  <rect x="64" y="18" width="36" height="24" rx="2" fill="#003D7C" opacity="0.15" stroke="#003D7C" stroke-width="1.5"/>
+  <line x1="73" y1="18" x2="73" y2="42" stroke="#003D7C" stroke-width="1" opacity="0.5"/>
+  <line x1="82" y1="18" x2="82" y2="42" stroke="#003D7C" stroke-width="1" opacity="0.5"/>
+  <line x1="91" y1="18" x2="91" y2="42" stroke="#003D7C" stroke-width="1" opacity="0.5"/>
+  <line x1="64" y1="28" x2="100" y2="28" stroke="#003D7C" stroke-width="1" opacity="0.5"/>
+  <circle cx="60" cy="14" r="5" fill="#F5A623"/>
+  <text x="60" y="68" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#003D7C" font-weight="600">Photovoltaïque</text>
+</svg>

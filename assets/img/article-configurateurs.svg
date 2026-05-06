@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none">
+  <rect width="120" height="80" rx="6" fill="#F0EFFF"/>
+  <!-- Laptop -->
+  <rect x="24" y="24" width="60" height="38" rx="3" fill="#5B4A99" opacity="0.1" stroke="#5B4A99" stroke-width="1.5"/>
+  <rect x="26" y="26" width="56" height="32" rx="2" fill="#5B4A99" opacity="0.08"/>
+  <!-- Écran / catalogue produits -->
+  <rect x="30" y="30" width="22" height="16" rx="1" fill="white" stroke="#5B4A99" stroke-width="1" opacity="0.6"/>
+  <rect x="31" y="31" width="20" height="7" rx="1" fill="#5B4A99" opacity="0.2"/>
+  <line x1="31" y1="40" x2="49" y2="40" stroke="#5B4A99" stroke-width="0.8" opacity="0.5"/>
+  <line x1="31" y1="43" x2="45" y2="43" stroke="#5B4A99" stroke-width="0.8" opacity="0.5"/>
+  <!-- Catalogue produits côté droit -->
+  <rect x="56" y="30" width="22" height="16" rx="1" fill="white" stroke="#5B4A99" stroke-width="1" opacity="0.6"/>
+  <rect x="57" y="31" width="20" height="7" rx="1" fill="#F5A623" opacity="0.3"/>
+  <line x1="57" y1="40" x2="75" y2="40" stroke="#5B4A99" stroke-width="0.8" opacity="0.5"/>
+  <line x1="57" y1="43" x2="71" y2="43" stroke="#5B4A99" stroke-width="0.8" opacity="0.5"/>
+  <!-- Bouton "Ajouter" -->
+  <rect x="62" y="49" width="12" height="5" rx="1" fill="#F5A623"/>
+  <text x="68" y="53" text-anchor="middle" font-family="Inter,sans-serif" font-size="4" fill="white" font-weight="700">+ Panier</text>
+  <!-- Curseur -->
+  <path d="M44 46 L40 52 L43 51 L45 54 L47 50 L44 49 Z" fill="#5B4A99" opacity="0.6"/>
+  <text x="60" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#5B4A99" font-weight="600">Configurateurs</text>
+</svg>

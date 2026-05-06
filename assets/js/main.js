@@ -17,7 +17,84 @@ const PRODUCTS = {
     { ref: '6ES7522-1BH01-0AB0', name: 'Module DQ 16×24VDC/0.5A S7-1500', image: 'assets/img/product-siemens.svg', url: 'https://www.rexel.fr/frx/search/?text=S7-1500+DQ+16&maxProd=4' },
     { ref: '6ES7531-7KF00-0AB0', name: 'Module AI 8×U/I/R/RTD S7-1500', image: 'assets/img/product-siemens.svg', url: 'https://www.rexel.fr/frx/search/?text=S7-1500+AI+8&maxProd=4' },
     { ref: '6ES7592-1AM00-0XB0', name: 'Frontal câblage S7-1500 40 broches', image: 'assets/img/product-siemens.svg', url: 'https://www.rexel.fr/frx/gammes/siemens-distribution-et-contr%C3%B4le/s7-1500' }
+  ],
+  'chauffage-industriel-tertiaire': [
+    { ref: 'CAB-RAD-2000W', name: 'Radiateur à bain d\'huile 2000W – Thermor', image: 'assets/img/product-chauffage.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Chauffage-%C3%A9lectrique-climatisation-ventilation/Chauffage-industriel-et-tertiaire/c/M2_0602' },
+    { ref: 'CAB-CVC-400V', name: 'Convecteur à soufflerie 1500W IP44 – Fondis', image: 'assets/img/product-chauffage.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Chauffage-%C3%A9lectrique-climatisation-ventilation/Chauffage-industriel-et-tertiaire/c/M2_0602' },
+    { ref: 'CAB-CRT-24KW', name: 'Aérotherme électrique 24 kW 400V – Stiebel', image: 'assets/img/product-chauffage.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Chauffage-%C3%A9lectrique-climatisation-ventilation/Chauffage-industriel-et-tertiaire/c/M2_0602' },
+    { ref: 'CAB-PAC-R32', name: 'Pompe à chaleur air/air split 5kW R32', image: 'assets/img/product-chauffage.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Chauffage-%C3%A9lectrique-climatisation-ventilation/Chauffage-industriel-et-tertiaire/c/M2_0602' }
+  ],
+  'kit-photovoltaique': [
+    { ref: 'KIT-PV-3KWC', name: 'Kit solaire autoconsommation 3 kWc – Longi + SMA', image: 'assets/img/product-pv.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Production-d%27%C3%A9nergie---Photovolta%C3%AFque/Kit-photovolta%C3%AFque/c/M2_1407' },
+    { ref: 'KIT-PV-ONT', name: 'Onduleur string 3kW + micro-onduleurs APS', image: 'assets/img/product-pv.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Production-d%27%C3%A9nergie---Photovolta%C3%AFque/Kit-photovolta%C3%AFque/c/M2_1407' },
+    { ref: 'KIT-PV-BAT', name: 'Batterie de stockage 5 kWh LFP – BYD', image: 'assets/img/product-pv.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Production-d%27%C3%A9nergie---Photovolta%C3%AFque/Kit-photovolta%C3%AFque/c/M2_1407' },
+    { ref: 'KIT-PV-MCB', name: 'Protection DC 1000V + parafoudre – Hager', image: 'assets/img/product-pv.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Production-d%27%C3%A9nergie---Photovolta%C3%AFque/Kit-photovolta%C3%AFque/c/M2_1407' }
+  ],
+  'led-non-interchangeable': [
+    { ref: 'LED-NI-PNL-840', name: 'Panneau LED intégré 36W 4000K 600×600 – Ledvance', image: 'assets/img/product-led-classique.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Eclairage/c/M2_07?page=1&filter=EF002423:LED%20non%20interchangeable;categoryCode:M2_0702' },
+    { ref: 'LED-NI-DLT-927', name: 'Downlight LED 15W 2700K IRC90 – Philips', image: 'assets/img/product-led-classique.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Eclairage/c/M2_07?page=1&filter=EF002423:LED%20non%20interchangeable;categoryCode:M2_0702' },
+    { ref: 'LED-NI-LNR-840', name: 'Réglette LED 58W 4000K IP65 – Osram', image: 'assets/img/product-led-classique.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Eclairage/c/M2_07?page=1&filter=EF002423:LED%20non%20interchangeable;categoryCode:M2_0702' },
+    { ref: 'LED-NI-SFT-830', name: 'Spot LED encastré 7W 3000K IRC90 – Legrand', image: 'assets/img/product-led-classique.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/Eclairage/c/M2_07?page=1&filter=EF002423:LED%20non%20interchangeable;categoryCode:M2_0702' }
+  ],
+  'videoprotection': [
+    { ref: 'CAM-IP-4MP', name: 'Caméra IP dôme 4 MP IR 30m – Dahua', image: 'assets/img/product-camera.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/S%C3%A9curit%C3%A9-et-communication/Vid%C3%A9oprotection/c/M2_0504' },
+    { ref: 'NVR-8CH-4K', name: 'NVR 8 canaux 4K avec disque 4 To – Hikvision', image: 'assets/img/product-camera.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/S%C3%A9curit%C3%A9-et-communication/Vid%C3%A9oprotection/c/M2_0504' },
+    { ref: 'CAM-EXT-IP66', name: 'Caméra bullet 8 MP IP66 IR 50m – Axis', image: 'assets/img/product-camera.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/S%C3%A9curit%C3%A9-et-communication/Vid%C3%A9oprotection/c/M2_0504' },
+    { ref: 'SWITCH-PoE-8P', name: 'Switch PoE+ 8 ports 120W – TP-Link', image: 'assets/img/product-camera.svg', url: 'https://www.rexel.fr/frx/Cat%C3%A9gorie/S%C3%A9curit%C3%A9-et-communication/Vid%C3%A9oprotection/c/M2_0504' }
   ]
+};
+
+/* --- Auteurs fictifs Rexel --- */
+const AUTHORS = {
+  'jean-louis-dupont': {
+    name: 'Jean-Louis Dupont',
+    title: 'Chef de marché Génie Climatique',
+    company: 'Rexel France',
+    linkedin: 'https://www.linkedin.com/in/jl-dupont-rexel',
+    initials: 'JD'
+  },
+  'marie-lefevre': {
+    name: 'Marie Lefèvre',
+    title: 'Cheffe de marché Photovoltaïque',
+    company: 'Rexel France',
+    linkedin: 'https://www.linkedin.com/in/marie-lefevre-rexel',
+    initials: 'ML'
+  },
+  'thomas-bernard': {
+    name: 'Thomas Bernard',
+    title: 'Chef de marché Éclairage Tertiaire',
+    company: 'Rexel France',
+    linkedin: 'https://www.linkedin.com/in/thomas-bernard-rexel',
+    initials: 'TB'
+  },
+  'sophie-martin': {
+    name: 'Sophie Martin',
+    title: 'Cheffe de marché Sécurité & Communication',
+    company: 'Rexel France',
+    linkedin: 'https://www.linkedin.com/in/sophie-martin-rexel',
+    initials: 'SM'
+  },
+  'antoine-petit': {
+    name: 'Antoine Petit',
+    title: 'Chef de marché Industrie & Automatismes',
+    company: 'Rexel France',
+    linkedin: 'https://www.linkedin.com/in/antoine-petit-rexel',
+    initials: 'AP'
+  },
+  'claire-dubois': {
+    name: 'Claire Dubois',
+    title: 'Responsable Conformité & Réglementation',
+    company: 'Rexel France',
+    linkedin: 'https://www.linkedin.com/in/claire-dubois-rexel',
+    initials: 'CD'
+  },
+  'paul-garnier': {
+    name: 'Paul Garnier',
+    title: 'Chef de produit Outils Digitaux',
+    company: 'Rexel France',
+    linkedin: 'https://www.linkedin.com/in/paul-garnier-rexel',
+    initials: 'PG'
+  }
 };
 
 /* --- SVG icons (inline) --- */
@@ -32,26 +109,40 @@ const ICONS = {
   cal: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
 };
 
+/* --- SVG icons inline pour la nav --- */
+const NAV_ICONS = {
+  flame: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
+  sun: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>',
+  bulb: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.5c.5.5 1 1.5 1 2.5h6c0-1 .5-2 1-2.5A7 7 0 0 0 12 2z"/></svg>',
+  shield: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+};
+
 /* --- Header HTML --- */
 const HEADER_HTML = `
 <div id="reading-progress"></div>
 <header class="header">
   <div class="header-inner">
-    <a href="index.html" class="logo">
+    <a href="index.html" class="logo" aria-label="MyVolt — accueil">
       <div class="logo-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
       </div>
       <div class="logo-wordmark">
-        <span class="logo-name">myvolt</span>
+        <span class="logo-name">MyVolt</span>
         <span class="logo-tagline">par Rexel</span>
       </div>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Navigation principale">
       <a href="profil-electricien.html" data-nav="electriciens">Électriciens</a>
-      <a href="audience-reseaux.html" data-nav="plombiers">Plombiers-chauffagistes</a>
+      <a href="audience-reseaux.html" data-nav="reseaux">Plombiers-Chauffagistes</a>
+      <a href="audience-climaticien.html" data-nav="climaticiens">Climaticiens</a>
       <a href="audience-integrateurs.html" data-nav="integrateurs">Intégrateurs</a>
       <a href="audience-clients-finaux.html" data-nav="partenaires">Vos partenaires</a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a href="rubrique-genie-climatique.html" data-nav="genie-climatique">${NAV_ICONS.flame}<span>Génie climatique</span></a>
+      <a href="rubrique-photovoltaique.html" data-nav="photovoltaique">${NAV_ICONS.sun}<span>Photovoltaïque</span></a>
+      <a href="rubrique-eclairage.html" data-nav="eclairage">${NAV_ICONS.bulb}<span>Éclairage</span></a>
+      <a href="rubrique-securite-communication.html" data-nav="securite">${NAV_ICONS.shield}<span>Sécurité & comm.</span></a>
     </nav>
 
     <div class="header-search" role="search">
@@ -69,26 +160,19 @@ const HEADER_HTML = `
   </div>
 </header>
 
-<nav class="nav-secondary" aria-label="Rubriques thématiques">
-  <div class="nav-secondary-inner">
-    <span class="nav-secondary-label">Thématiques</span>
-    <a href="rubrique-genie-climatique.html" data-nav-sec="genie-climatique">♨️ Génie climatique</a>
-    <a href="rubrique-photovoltaique.html" data-nav-sec="photovoltaique">☀️ Photovoltaïque</a>
-    <a href="rubrique-eclairage.html" data-nav-sec="eclairage">💡 Éclairage</a>
-    <a href="rubrique-securite-communication.html" data-nav-sec="securite">🔒 Sécurité & comm.</a>
-  </div>
-</nav>
-
 <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile">
-  <a href="profil-electricien.html">⚡ Électriciens</a>
-  <a href="audience-reseaux.html">🔧 Plombiers-chauffagistes</a>
-  <a href="audience-integrateurs.html">🏗️ Intégrateurs</a>
-  <a href="audience-clients-finaux.html">🤝 Vos partenaires</a>
-  <hr style="border:none;border-top:1px solid rgba(255,255,255,0.15);margin:8px 16px;">
-  <a href="rubrique-genie-climatique.html">♨️ Génie climatique</a>
-  <a href="rubrique-photovoltaique.html">☀️ Photovoltaïque</a>
-  <a href="rubrique-eclairage.html">💡 Éclairage</a>
-  <a href="rubrique-securite-communication.html">🔒 Sécurité & comm.</a>
+  <p class="mobile-nav-label">Métiers</p>
+  <a href="profil-electricien.html">Électriciens</a>
+  <a href="audience-reseaux.html">Plombiers-Chauffagistes</a>
+  <a href="audience-climaticien.html">Climaticiens</a>
+  <a href="audience-integrateurs.html">Intégrateurs</a>
+  <a href="audience-clients-finaux.html">Vos partenaires</a>
+  <p class="mobile-nav-label">Thématiques</p>
+  <a href="rubrique-genie-climatique.html">${NAV_ICONS.flame}<span>Génie climatique</span></a>
+  <a href="rubrique-photovoltaique.html">${NAV_ICONS.sun}<span>Photovoltaïque</span></a>
+  <a href="rubrique-eclairage.html">${NAV_ICONS.bulb}<span>Éclairage</span></a>
+  <a href="rubrique-securite-communication.html">${NAV_ICONS.shield}<span>Sécurité &amp; comm.</span></a>
+  <hr>
   <a href="https://www.rexel.fr/frx/" target="_blank" rel="noopener">Webshop ↗</a>
 </nav>
 `;
@@ -115,17 +199,27 @@ const FOOTER_HTML = `
         <div class="logo-icon-sm">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
-        <span class="logo-name">myvolt</span>
+        <span class="logo-name">MyVolt</span>
       </div>
       <p>Le média de référence des professionnels de l'électricité, par Rexel. Guides, expertises et ressources pour le réseau.</p>
     </div>
     <div class="footer-col">
-      <h4>Audiences</h4>
+      <h4>Métiers</h4>
       <ul>
-        <li><a href="profil-electricien.html">⚡ Électriciens</a></li>
-        <li><a href="audience-reseaux.html">🔧 Plombiers-chauffagistes</a></li>
-        <li><a href="audience-integrateurs.html">🏗️ Intégrateurs</a></li>
-        <li><a href="audience-clients-finaux.html">🤝 Vos partenaires</a></li>
+        <li><a href="profil-electricien.html">Électriciens</a></li>
+        <li><a href="audience-reseaux.html">Plombiers-Chauffagistes</a></li>
+        <li><a href="audience-climaticien.html">Climaticiens</a></li>
+        <li><a href="audience-integrateurs.html">Intégrateurs</a></li>
+        <li><a href="audience-clients-finaux.html">Vos partenaires</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Thématiques</h4>
+      <ul>
+        <li><a href="rubrique-genie-climatique.html">Génie Climatique</a></li>
+        <li><a href="rubrique-photovoltaique.html">Photovoltaïque</a></li>
+        <li><a href="rubrique-eclairage.html">Éclairage</a></li>
+        <li><a href="rubrique-securite-communication.html">Sécurité & comm.</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -135,6 +229,7 @@ const FOOTER_HTML = `
         <li><a href="#">Guides pratiques</a></li>
         <li><a href="#">Newsletter</a></li>
         <li><a href="#">Glossaire</a></li>
+        <li><a href="arborescence.html">Arborescence &amp; contenu</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -149,7 +244,7 @@ const FOOTER_HTML = `
   </div>
   <div class="footer-divider"></div>
   <div class="footer-bottom">
-    <span>© 2026 Rexel — myvolt.rexel.fr · Tous droits réservés</span>
+    <span>© 2026 Rexel — MyVolt · Tous droits réservés</span>
     <div class="footer-bottom-links">
       <a href="#">Mentions légales</a>
       <a href="#">Données personnelles</a>
@@ -170,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTOC();
   initActiveNav();
   initProductCarousels();
+  initArticleTags();
 });
 
 function injectHeaderFooter() {
@@ -311,4 +407,57 @@ function handleNewsletterSubmit(e) {
   btn.style.background = '#22C55E';
   input.value = '';
   input.disabled = true;
+}
+
+/* =========================================
+   ARTICLE TAGS
+   ========================================= */
+
+const TAG_LABELS = {
+  'maprimerenov': 'MaPrimeRénov',
+  'rge': 'RGE',
+  'renovation': 'Rénovation',
+  'assurance': 'Assurance',
+  'juridique': 'Juridique',
+  'f-gas': 'F-Gas',
+  'attestation-capacite': 'Attestation capacité',
+  'fluides-frigorigenes': 'Fluides frigorigènes',
+  'climatisation': 'Climatisation',
+  'cvc': 'CVC',
+  'logiciels-calcul': 'Logiciels calcul',
+  'eclairage-led': 'Éclairage LED',
+  'led': 'LED',
+  'irc': 'IRC',
+  'normes': 'Normes',
+  'industrie': 'Industrie',
+  'automatisme': 'Automatisme',
+  'siemens': 'Siemens',
+  'outils-rexel': 'Outils Rexel',
+  'configurateur': 'Configurateur',
+  'reglement-machines': 'Règlement Machines',
+  'led-non-interchangeable': 'LED non interchangeable'
+};
+
+function initArticleTags() {
+  document.querySelectorAll('.article-card[data-tags]').forEach(card => {
+    const tags = card.dataset.tags.split(' ').filter(Boolean);
+    if (!tags.length) return;
+    const body = card.querySelector('.article-body');
+    if (!body) return;
+    const tagsEl = document.createElement('div');
+    tagsEl.className = 'article-tags';
+    tags.forEach(tag => {
+      const a = document.createElement('a');
+      a.href = 'tag.html?tag=' + encodeURIComponent(tag);
+      a.className = 'article-tag';
+      a.textContent = TAG_LABELS[tag] || tag;
+      tagsEl.appendChild(a);
+    });
+    const footer = body.querySelector('.article-card-footer');
+    if (footer) {
+      body.insertBefore(tagsEl, footer);
+    } else {
+      body.appendChild(tagsEl);
+    }
+  });
 }

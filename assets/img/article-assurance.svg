@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none">
+  <rect width="120" height="80" rx="6" fill="#EEF0F6"/>
+  <!-- Bouclier -->
+  <path d="M60 14 L78 20 L78 36 C78 46 70 52 60 56 C50 52 42 46 42 36 L42 20 Z" fill="#002855" opacity="0.1" stroke="#002855" stroke-width="1.5"/>
+  <!-- Check dans le bouclier -->
+  <polyline points="52,35 57,40 68,28" stroke="#002855" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <!-- Document -->
+  <rect x="26" y="28" width="22" height="28" rx="2" fill="white" stroke="#002855" stroke-width="1.5" opacity="0.8"/>
+  <line x1="30" y1="35" x2="44" y2="35" stroke="#002855" stroke-width="1" opacity="0.5"/>
+  <line x1="30" y1="39" x2="44" y2="39" stroke="#002855" stroke-width="1" opacity="0.5"/>
+  <line x1="30" y1="43" x2="38" y2="43" stroke="#002855" stroke-width="1" opacity="0.5"/>
+  <line x1="30" y1="49" x2="40" y2="49" stroke="#F5A623" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="60" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#002855" font-weight="600">Assurance</text>
+</svg>

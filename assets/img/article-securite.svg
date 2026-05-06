@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none">
+  <rect width="120" height="80" rx="6" fill="#EBF3FB"/>
+  <!-- Caméra principale -->
+  <rect x="22" y="28" width="40" height="24" rx="3" fill="#003D7C" opacity="0.12" stroke="#003D7C" stroke-width="1.5"/>
+  <circle cx="42" cy="40" r="8" fill="#003D7C" opacity="0.15" stroke="#003D7C" stroke-width="1.3"/>
+  <circle cx="42" cy="40" r="4" fill="#003D7C" opacity="0.3"/>
+  <circle cx="42" cy="40" r="1.5" fill="#003D7C"/>
+  <!-- Support caméra -->
+  <line x1="22" y1="32" x2="18" y2="28" stroke="#003D7C" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="16" cy="26" r="3" fill="#003D7C" opacity="0.2" stroke="#003D7C" stroke-width="1"/>
+  <!-- Flash LED -->
+  <circle cx="57" cy="31" r="2" fill="#F5A623"/>
+  <!-- Interphone -->
+  <rect x="78" y="22" width="22" height="36" rx="4" fill="#003D7C" opacity="0.1" stroke="#003D7C" stroke-width="1.5"/>
+  <!-- Haut-parleur interphone -->
+  <rect x="82" y="27" width="14" height="10" rx="1" fill="#003D7C" opacity="0.15" stroke="#003D7C" stroke-width="1"/>
+  <line x1="82" y1="29" x2="96" y2="29" stroke="#003D7C" stroke-width="0.8" opacity="0.5"/>
+  <line x1="82" y1="31" x2="96" y2="31" stroke="#003D7C" stroke-width="0.8" opacity="0.5"/>
+  <line x1="82" y1="33" x2="96" y2="33" stroke="#003D7C" stroke-width="0.8" opacity="0.5"/>
+  <!-- Bouton sonnette -->
+  <circle cx="89" cy="43" r="4" fill="#003D7C" opacity="0.3" stroke="#003D7C" stroke-width="1"/>
+  <!-- Caméra mini interphone -->
+  <rect x="83" y="50" width="12" height="6" rx="1" fill="#003D7C" opacity="0.1" stroke="#003D7C" stroke-width="1"/>
+  <circle cx="89" cy="53" r="2" fill="#003D7C" opacity="0.3"/>
+  <text x="60" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#003D7C" font-weight="600">Sécurité & Communication</text>
+</svg>

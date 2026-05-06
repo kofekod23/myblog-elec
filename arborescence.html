@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arborescence & contenu — Myvolt</title>
+  <meta name="description" content="Arborescence du site Myvolt, structure de navigation, types d'articles et spécifications éditoriales.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* ---- Arborescence styles ---- */
+    .arbo-page { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+    .arbo-section { margin-bottom: 56px; }
+    .arbo-section h2 { font-size: 20px; font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--rexel-blue); padding-bottom: 8px; margin-bottom: 24px; }
+    .arbo-section h3 { font-size: 15px; font-weight: 700; color: var(--gray-700); margin: 20px 0 10px; }
+
+    /* Site map grid */
+    .sitemap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 640px) { .sitemap { grid-template-columns: 1fr; } }
+
+    .sitemap-col { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--r-lg); padding: 20px; }
+    .sitemap-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-400); margin-bottom: 12px; }
+    .sitemap-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+    .sitemap-col li { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .sitemap-col li a { color: var(--rexel-blue-mid); text-decoration: none; font-weight: 500; }
+    .sitemap-col li a:hover { text-decoration: underline; }
+    .dot-real { width: 7px; height: 7px; border-radius: 50%; background: var(--rexel-blue); flex-shrink: 0; }
+    .dot-lorem { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid var(--gray-300); flex-shrink: 0; }
+
+    /* Nav diagram */
+    .nav-diagram { background: var(--navy); border-radius: var(--r-lg); padding: 24px 28px; color: white; overflow-x: auto; }
+    .nav-diagram-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; font-size: 13px; }
+    .nav-diagram-row:last-child { margin-bottom: 0; }
+    .nav-chip { background: rgba(255,255,255,0.12); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+    .nav-chip.active { background: rgba(255,255,255,0.25); font-weight: 700; }
+    .nav-sep { color: rgba(255,255,255,0.3); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; flex-shrink: 0; }
+    .nav-label { color: rgba(255,255,255,0.5); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 4px; flex-shrink: 0; }
+
+    /* Spec table */
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .spec-table th { text-align: left; padding: 10px 14px; background: var(--gray-100); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); border-bottom: 1px solid var(--gray-200); }
+    .spec-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-100); vertical-align: top; }
+    .spec-table tr:last-child td { border-bottom: none; }
+    .spec-table code { background: var(--gray-100); padding: 2px 5px; border-radius: 3px; font-size: 12px; font-family: monospace; }
+    .check { color: #2E7D32; font-weight: 700; }
+    .dash { color: var(--gray-300); }
+
+    /* Audience mapping */
+    .aud-map { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 580px) { .aud-map { grid-template-columns: 1fr; } }
+    .aud-map-item { border: 1px solid var(--gray-200); border-radius: var(--r-md); padding: 14px 16px; }
+    .aud-map-item-title { font-size: 13px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .aud-map-item ul { padding: 0 0 0 12px; margin: 0; font-size: 12.5px; color: var(--gray-600); line-height: 1.7; }
+
+    /* Badge inline */
+    .badge-inline { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-right: 4px; }
+    .badge-inline.elec { background: #E8ECF5; color: #002855; }
+    .badge-inline.plomb { background: #E6F2F0; color: #006B5E; }
+    .badge-inline.clim { background: #E0F0F7; color: #0077A8; }
+    .badge-inline.integ { background: #EEE9F8; color: #5B4A99; }
+    .badge-inline.part { background: #E8F1FB; color: #2C5F8A; }
+
+    /* Guidelines cards */
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .guide-card { border: 1px solid var(--gray-200); border-radius: var(--r-md); padding: 18px 20px; }
+    .guide-card-icon { font-size: 22px; margin-bottom: 10px; }
+    .guide-card h4 { font-size: 14px; font-weight: 700; color: var(--gray-900); margin: 0 0 8px; }
+    .guide-card p { font-size: 13px; color: var(--gray-600); margin: 0; line-height: 1.5; }
+    .guide-card code { font-size: 12px; background: var(--gray-100); padding: 1px 4px; border-radius: 3px; }
+  </style>
+</head>
+<body data-nav="">
+
+  <div id="site-header"></div>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Accueil</a>
+    <span class="sep">›</span>
+    <span>Arborescence &amp; contenu</span>
+  </nav>
+
+  <div class="arbo-page">
+
+    <header style="margin-bottom: 48px;">
+      <h1 style="font-size: 32px; font-weight: 800; color: var(--navy); margin-bottom: 12px;">Arborescence &amp; contenu</h1>
+      <p style="font-size: 17px; color: var(--gray-600); max-width: 640px;">Structure de navigation du site Myvolt, types d'articles et spécifications éditoriales pour l'équipe de rédaction et les partenaires.</p>
+    </header>
+
+    <!-- ============================
+         1. NAVIGATION
+         ============================ -->
+    <section class="arbo-section">
+      <h2>1. Structure de navigation</h2>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 20px;">La barre de navigation est divisée en deux blocs : <strong>Métiers</strong> (les audiences principales) et <strong>Thématiques</strong> (rubriques transverses qui compilent les articles par sujet).</p>
+
+      <div class="nav-diagram">
+        <div class="nav-diagram-row">
+          <span class="nav-label">Métiers</span>
+          <a href="profil-electricien.html" class="nav-chip active">⚡ Électriciens</a>
+          <a href="audience-reseaux.html" class="nav-chip active">🔧 Plombiers-Chauffagistes</a>
+          <a href="audience-climaticien.html" class="nav-chip active">❄️ Climaticiens</a>
+          <a href="audience-integrateurs.html" class="nav-chip active">🏗️ Intégrateurs</a>
+          <a href="audience-clients-finaux.html" class="nav-chip active">🤝 Vos partenaires</a>
+        </div>
+        <div class="nav-diagram-row">
+          <span class="nav-label">Thématiques</span>
+          <a href="rubrique-genie-climatique.html" class="nav-chip">Génie climatique</a>
+          <a href="rubrique-photovoltaique.html" class="nav-chip">Photovoltaïque</a>
+          <a href="rubrique-eclairage.html" class="nav-chip">Éclairage</a>
+          <a href="rubrique-securite-communication.html" class="nav-chip">Sécurité &amp; comm.</a>
+        </div>
+      </div>
+
+      <h3>Règle clé</h3>
+      <p style="font-size: 14px; color: var(--gray-600);">Un article peut apparaître dans <strong>plusieurs listes d'articles</strong> (plusieurs métiers ou rubriques). L'appartenance est définie par l'attribut <code>data-tags</code> sur la carte et la présence de la carte dans chaque page hub concernée.</p>
+    </section>
+
+    <!-- ============================
+         2. PAGES DU SITE
+         ============================ -->
+    <section class="arbo-section">
+      <h2>2. Cartographie des pages</h2>
+
+      <div class="sitemap">
+        <!-- Hubs métiers -->
+        <div class="sitemap-col">
+          <div class="sitemap-col-title">Hubs métiers</div>
+          <ul>
+            <li><span class="dot-real"></span><a href="profil-electricien.html">profil-electricien.html</a></li>
+            <li><span class="dot-real"></span><a href="audience-reseaux.html">audience-reseaux.html</a> — Plombiers-Chauffagistes</li>
+            <li><span class="dot-real"></span><a href="audience-climaticien.html">audience-climaticien.html</a></li>
+            <li><span class="dot-real"></span><a href="audience-integrateurs.html">audience-integrateurs.html</a></li>
+            <li><span class="dot-real"></span><a href="audience-clients-finaux.html">audience-clients-finaux.html</a> — Vos partenaires</li>
+          </ul>
+        </div>
+        <!-- Rubriques transverses -->
+        <div class="sitemap-col">
+          <div class="sitemap-col-title">Rubriques transverses</div>
+          <ul>
+            <li><span class="dot-real"></span><a href="rubrique-genie-climatique.html">rubrique-genie-climatique.html</a></li>
+            <li><span class="dot-real"></span><a href="rubrique-photovoltaique.html">rubrique-photovoltaique.html</a></li>
+            <li><span class="dot-real"></span><a href="rubrique-eclairage.html">rubrique-eclairage.html</a></li>
+            <li><span class="dot-real"></span><a href="rubrique-securite-communication.html">rubrique-securite-communication.html</a></li>
+          </ul>
+        </div>
+        <!-- Articles rédigés -->
+        <div class="sitemap-col">
+          <div class="sitemap-col-title">Articles rédigés <span class="dot-real" style="display:inline-block;margin-left:4px;"></span></div>
+          <ul>
+            <li><span class="dot-real"></span><a href="article-electricien-auto-entrepreneur.html">article-electricien-auto-entrepreneur.html</a></li>
+            <li><span class="dot-real"></span><a href="article-maprimerenov-2026.html">article-maprimerenov-2026.html</a></li>
+            <li><span class="dot-real"></span><a href="article-assurance-electricien.html">article-assurance-electricien.html</a></li>
+            <li><span class="dot-real"></span><a href="article-mandataire-maprimerenov.html">article-mandataire-maprimerenov.html</a></li>
+            <li><span class="dot-real"></span><a href="article-eclairage-led-tertiaire.html">article-eclairage-led-tertiaire.html</a></li>
+            <li><span class="dot-real"></span><a href="article-reglement-machines-ue.html">article-reglement-machines-ue.html</a></li>
+            <li><span class="dot-real"></span><a href="article-migration-s7-1500.html">article-migration-s7-1500.html</a></li>
+            <li><span class="dot-real"></span><a href="article-configurateurs-rexel.html">article-configurateurs-rexel.html</a></li>
+            <li><span class="dot-real"></span><a href="article-attestation-capacite.html">article-attestation-capacite.html</a></li>
+            <li><span class="dot-real"></span><a href="article-climaticien-logiciels-calcul.html">article-climaticien-logiciels-calcul.html</a></li>
+            <li><span class="dot-real"></span><a href="article-led-non-interchangeable.html">article-led-non-interchangeable.html</a></li>
+          </ul>
+        </div>
+        <!-- Articles à venir -->
+        <div class="sitemap-col">
+          <div class="sitemap-col-title">Articles à venir <span class="dot-lorem" style="display:inline-block;margin-left:4px;"></span></div>
+          <ul>
+            <li><span class="dot-lorem"></span>Qualification RGE QualiPAC / Qualibois</li>
+            <li><span class="dot-lorem"></span>F-Gas et fluides A2L</li>
+            <li><span class="dot-lorem"></span>Dimensionnement PAC</li>
+            <li><span class="dot-lorem"></span>NF C 15-100 (2024-2025)</li>
+            <li><span class="dot-lorem"></span>Visite Consuel — non-conformités</li>
+            <li><span class="dot-lorem"></span>Installateur IRVE 2026</li>
+            <li><span class="dot-lorem"></span>Décret tertiaire collectivités</li>
+            <li><span class="dot-lorem"></span>ISO 50001 management énergie</li>
+            <li><span class="dot-lorem"></span>Reporting CSRD énergie/carbone</li>
+            <li><span class="dot-lorem"></span>Éclairage public LED</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size: 13px; color: var(--gray-500); margin-top: 12px;">
+        <span style="display:inline-flex;align-items:center;gap:6px;margin-right:16px;"><span class="dot-real"></span> Article rédigé</span>
+        <span style="display:inline-flex;align-items:center;gap:6px;"><span class="dot-lorem"></span> Article à venir (lorem ipsum via <code>article-lorem.html?title=…</code>)</span>
+      </p>
+    </section>
+
+    <!-- ============================
+         3. MAPPING AUDIENCES
+         ============================ -->
+    <section class="arbo-section">
+      <h2>3. Mapping article ↔ audiences</h2>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 20px;">Un même article peut être référencé dans plusieurs hubs métiers. La carte est dupliquée dans chaque hub concerné avec le badge audience approprié.</p>
+
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Article</th>
+            <th>Audiences</th>
+            <th>Hubs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MaPrimeRénov 2026</td>
+            <td>
+              <span class="badge-inline elec">Électriciens</span>
+              <span class="badge-inline plomb">Plombiers-Chauffagistes</span>
+            </td>
+            <td><code>profil-electricien</code> · <code>audience-reseaux</code></td>
+          </tr>
+          <tr>
+            <td>Auto-entrepreneur électricien</td>
+            <td><span class="badge-inline elec">Électriciens</span></td>
+            <td><code>profil-electricien</code></td>
+          </tr>
+          <tr>
+            <td>Assurance électricien</td>
+            <td><span class="badge-inline elec">Électriciens</span></td>
+            <td><code>profil-electricien</code></td>
+          </tr>
+          <tr>
+            <td>Mandataire MaPrimeRénov</td>
+            <td>
+              <span class="badge-inline elec">Électriciens</span>
+              <span class="badge-inline plomb">Plombiers-Chauffagistes</span>
+            </td>
+            <td><code>profil-electricien</code> · <code>audience-reseaux</code></td>
+          </tr>
+          <tr>
+            <td>Éclairage LED tertiaire</td>
+            <td>
+              <span class="badge-inline elec">Électriciens</span>
+              <span class="badge-inline integ">Intégrateurs</span>
+            </td>
+            <td><code>profil-electricien</code> · <code>audience-integrateurs</code></td>
+          </tr>
+          <tr>
+            <td>Règlement machines UE 2023/1230</td>
+            <td><span class="badge-inline integ">Intégrateurs</span></td>
+            <td><code>audience-integrateurs</code></td>
+          </tr>
+          <tr>
+            <td>Migration S7-300 → S7-1500</td>
+            <td><span class="badge-inline integ">Intégrateurs</span></td>
+            <td><code>audience-integrateurs</code></td>
+          </tr>
+          <tr>
+            <td>Configurateurs Rexel</td>
+            <td>
+              <span class="badge-inline elec">Électriciens</span>
+              <span class="badge-inline plomb">Plombiers-Chauffagistes</span>
+              <span class="badge-inline integ">Intégrateurs</span>
+            </td>
+            <td><code>profil-electricien</code> · <code>audience-reseaux</code> · <code>audience-integrateurs</code></td>
+          </tr>
+          <tr>
+            <td>Attestation F-Gas</td>
+            <td><span class="badge-inline clim">Climaticiens</span></td>
+            <td><code>audience-climaticien</code></td>
+          </tr>
+          <tr>
+            <td>Logiciels calcul CVC</td>
+            <td><span class="badge-inline clim">Climaticiens</span></td>
+            <td><code>audience-climaticien</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================
+         4. STRUCTURE D'UN ARTICLE
+         ============================ -->
+    <section class="arbo-section">
+      <h2>4. Structure type d'un article</h2>
+
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Élément</th>
+            <th>Obligatoire</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>schema.org BlogPosting</code></td>
+            <td><span class="check">✓</span></td>
+            <td>JSON-LD dans <code>&lt;head&gt;</code> — headline, datePublished, author (Person), wordCount</td>
+          </tr>
+          <tr>
+            <td><code>.tldr-block</code></td>
+            <td><span class="check">✓</span></td>
+            <td>En bref (TL;DR) — 4–5 bullets factuels en haut d'article</td>
+          </tr>
+          <tr>
+            <td>Date + auteur + temps de lecture</td>
+            <td><span class="check">✓</span></td>
+            <td>Dans le hero, visible avant le premier paragraphe</td>
+          </tr>
+          <tr>
+            <td>Bloc auteur (<code>.author-block</code>)</td>
+            <td><span class="check">✓</span></td>
+            <td>Avatar initiales + nom + fonction + lien LinkedIn</td>
+          </tr>
+          <tr>
+            <td>Titres en question</td>
+            <td><span class="check">✓</span></td>
+            <td>H2 formulés comme questions (GEO) : «&nbsp;Comment obtenir&nbsp;?&nbsp;» plutôt que «&nbsp;Obtenir&nbsp;»</td>
+          </tr>
+          <tr>
+            <td>Réponse directe sous chaque H2</td>
+            <td><span class="check">✓</span></td>
+            <td>1–2 phrases répondant directement au titre avant développement</td>
+          </tr>
+          <tr>
+            <td>Tableaux comparatifs</td>
+            <td>Recommandé</td>
+            <td>Plafonds, tarifs, comparatifs IRC/IP, etc. — lisibles par LLM</td>
+          </tr>
+          <tr>
+            <td><code>&lt;dfn&gt;</code> sur termes techniques</td>
+            <td>Recommandé</td>
+            <td>Définitions inline sur première occurrence (F-Gas, IRC, RGE…)</td>
+          </tr>
+          <tr>
+            <td><code>.faq-block</code> + <code>FAQPage</code></td>
+            <td>Recommandé</td>
+            <td>3–5 questions en bas d'article avec schema.org FAQPage</td>
+          </tr>
+          <tr>
+            <td><code>.institutional-source</code></td>
+            <td><span class="check">✓</span></td>
+            <td>Liens service-public.fr, ANAH, INRS, écologie.gouv.fr — jamais concurrents Rexel</td>
+          </tr>
+          <tr>
+            <td>Carrousel produits (<code>.product-carousel</code>)</td>
+            <td>Si pertinent</td>
+            <td>2–6 produits Rexel avec lien webshop — <code>data-products="key"</code></td>
+          </tr>
+          <tr>
+            <td>Longueur cible</td>
+            <td>—</td>
+            <td>~1&nbsp;000 mots (800–1&nbsp;200 acceptable)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================
+         5. GUIDELINES GEO
+         ============================ -->
+    <section class="arbo-section">
+      <h2>5. Guidelines GEO &amp; SEO</h2>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 20px;">Le GEO (Generative Engine Optimization) vise à rendre les contenus directement extractibles par les LLM (ChatGPT, Perplexity, Gemini…). Les règles suivantes s'appliquent à chaque article.</p>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-card-icon">❓</div>
+          <h4>Titres en question</h4>
+          <p>Les H2 doivent être formulés comme des questions directes. Ex. : <em>« Comment obtenir la qualification RGE QualiPAC ? »</em></p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">⚡</div>
+          <h4>TL;DR en tête</h4>
+          <p>Bloc <code>.tldr-block</code> avec 4–5 bullets factuels <strong>avant le premier paragraphe</strong>. Répond à 90 % des questions des lecteurs pressés.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">📊</div>
+          <h4>Tableaux structurés</h4>
+          <p>Plafonds, dates, comparatifs en tableau HTML natif — bien parsés par les extracteurs LLM. Pas de captures d'écran.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">🏷️</div>
+          <h4>Définitions <code>&lt;dfn&gt;</code></h4>
+          <p>Termes techniques définis inline à leur première occurrence : <code>&lt;dfn&gt;F-Gas&lt;/dfn&gt;</code> suivi immédiatement de la définition.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">🔗</div>
+          <h4>Sources institutionnelles</h4>
+          <p>Liens <code>rel="external noopener"</code> vers service-public.fr, ANAH, INRS, écologie.gouv.fr. <strong>Jamais vers des concurrents Rexel.</strong></p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">🧩</div>
+          <h4>Schema.org double</h4>
+          <p><code>BlogPosting</code> en JSON-LD dans <code>&lt;head&gt;</code> + <code>FAQPage</code> inline dans le corps de l'article.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">🏷️</div>
+          <h4>Tags (<code>data-tags</code>)</h4>
+          <p>Chaque carte article porte un attribut <code>data-tags="slug1 slug2"</code>. Génère automatiquement des liens vers <code>tag.html?tag=slug</code>.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">👤</div>
+          <h4>Auteur Chef de marché</h4>
+          <p>Chaque article est signé par un auteur fictif Rexel (nom + fonction + LinkedIn). Schema.org <code>author: Person</code>.</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-card-icon">🌐</div>
+          <h4>Multi-audience</h4>
+          <p>Un article peut être dans plusieurs hubs métiers. La carte est dupliquée avec le <code>.badge-aud</code> de chaque audience concernée.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         6. SYSTEME DE TAGS
+         ============================ -->
+    <section class="arbo-section">
+      <h2>6. Système de tags</h2>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Les tags sont définis dans la constante <code>TAG_LABELS</code> de <code>main.js</code>. Ils permettent une navigation croisée entre articles.</p>
+
+      <table class="spec-table">
+        <thead>
+          <tr><th>Slug (data-tags)</th><th>Label affiché</th><th>Exemples d'articles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>maprimerenov</code></td><td>MaPrimeRénov</td><td>maprimerenov-2026, mandataire-maprimerenov</td></tr>
+          <tr><td><code>rge</code></td><td>RGE</td><td>maprimerenov-2026, electricien-auto-entrepreneur</td></tr>
+          <tr><td><code>renovation</code></td><td>Rénovation</td><td>maprimerenov-2026</td></tr>
+          <tr><td><code>normes</code></td><td>Normes</td><td>articles NF C 15-100, Règlement machines</td></tr>
+          <tr><td><code>irve</code></td><td>IRVE</td><td>articles installation borne de recharge</td></tr>
+          <tr><td><code>led</code></td><td>LED</td><td>eclairage-led-tertiaire, led-non-interchangeable</td></tr>
+          <tr><td><code>fgas</code></td><td>F-Gas</td><td>attestation-capacite</td></tr>
+          <tr><td><code>industrie</code></td><td>Industrie</td><td>migration-s7-1500, reglement-machines-ue</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================
+         7. DATASETS CARROUSELS
+         ============================ -->
+    <section class="arbo-section">
+      <h2>7. Carrousels produits</h2>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Les produits sont définis dans la constante <code>PRODUCTS</code> de <code>main.js</code>. Utiliser <code>&lt;section class="product-carousel" data-products="key"&gt;</code> dans l'article.</p>
+
+      <table class="spec-table">
+        <thead>
+          <tr><th>Clé dataset</th><th>Nb produits</th><th>Catégorie Rexel</th><th>Pages concernées</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>led-tertiaire</code></td><td>5</td><td>Éclairage LED tertiaire</td><td>article-eclairage-led-tertiaire</td></tr>
+          <tr><td><code>s7-1500</code></td><td>5</td><td>Automatismes Siemens</td><td>article-migration-s7-1500</td></tr>
+          <tr><td><code>chauffage-industriel-tertiaire</code></td><td>4</td><td>Chauffage industriel CVC</td><td>rubrique-genie-climatique</td></tr>
+          <tr><td><code>kit-photovoltaique</code></td><td>4</td><td>Kits PV autoconsommation</td><td>rubrique-photovoltaique</td></tr>
+          <tr><td><code>led-non-interchangeable</code></td><td>4</td><td>LED non interchangeables</td><td>rubrique-eclairage, article-led-non-interchangeable</td></tr>
+          <tr><td><code>videoprotection</code></td><td>4</td><td>Caméras IP, NVR</td><td>rubrique-securite-communication</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================
+         8. AUTEURS
+         ============================ -->
+    <section class="arbo-section">
+      <h2>8. Équipe rédactionnelle</h2>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Auteurs fictifs stables — réutilisables d'un article à l'autre. Définis dans la constante <code>AUTHORS</code> de <code>main.js</code>.</p>
+
+      <table class="spec-table">
+        <thead>
+          <tr><th>Clé</th><th>Nom</th><th>Fonction</th><th>Articles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>jean-louis-dupont</code></td><td>Jean-Louis Dupont</td><td>Chef de marché Génie Climatique</td><td>MaPrimeRénov, Mandataire, Génie Climatique</td></tr>
+          <tr><td><code>marie-lefevre</code></td><td>Marie Lefèvre</td><td>Cheffe de marché Photovoltaïque</td><td>Rubrique Photovoltaïque</td></tr>
+          <tr><td><code>thomas-bernard</code></td><td>Thomas Bernard</td><td>Chef de marché Éclairage Tertiaire</td><td>LED tertiaire, LED non interchangeable, Éclairage</td></tr>
+          <tr><td><code>sophie-martin</code></td><td>Sophie Martin</td><td>Cheffe de marché Sécurité &amp; Comm.</td><td>Rubrique Sécurité</td></tr>
+          <tr><td><code>antoine-petit</code></td><td>Antoine Petit</td><td>Chef de marché Industrie &amp; Automatismes</td><td>Règlement machines, Migration S7-1500</td></tr>
+          <tr><td><code>claire-dubois</code></td><td>Claire Dubois</td><td>Responsable Conformité &amp; Réglementation</td><td>Assurance électricien</td></tr>
+          <tr><td><code>paul-garnier</code></td><td>Paul Garnier</td><td>Chef de produit Outils Digitaux</td><td>Configurateurs Rexel</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div><!-- /.arbo-page -->
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

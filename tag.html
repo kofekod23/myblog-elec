@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Articles — MyVolt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Accueil</a><span class="sep">›</span>
+    <span id="tag-breadcrumb">Tag</span>
+  </nav>
+
+  <section class="page-header">
+    <div class="page-header-inner">
+      <span class="badge-aud electriciens">Thématique</span>
+      <h1 id="tag-title">Articles</h1>
+      <p class="lede" id="tag-lede">Tous les articles sur ce thème.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="articles-grid" id="tag-articles-grid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const tag = params.get('tag') || '';
+      const label = (typeof TAG_LABELS !== 'undefined' && TAG_LABELS[tag]) ? TAG_LABELS[tag] : tag;
+
+      document.title = label + ' — MyVolt';
+      document.getElementById('tag-breadcrumb').textContent = label;
+      document.getElementById('tag-title').textContent = label;
+      document.getElementById('tag-lede').textContent = 'Tous les articles MyVolt sur le thème « ' + label + ' ».';
+
+      // Mock articles for this tag (demo only - real implementation would use API or static index)
+      document.getElementById('tag-articles-grid').innerHTML = '<p style="color:var(--gray-500);font-size:14px;padding:40px 0;">Cette page regroupe automatiquement les articles tagués « ' + label + ' ». En production, le contenu serait alimenté dynamiquement.</p>';
+    });
+  </script>
+
+</body>
+</html>
