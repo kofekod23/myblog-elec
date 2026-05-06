@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <rect width="200" height="150" fill="#F7F4F0"/>
+  <circle cx="100" cy="58" r="26" fill="none" stroke="#F5A623" stroke-width="2.5"/>
+  <circle cx="100" cy="58" r="16" fill="#FFF8E6" stroke="#F5A623" stroke-width="1.5"/>
+  <line x1="100" y1="28" x2="100" y2="20" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="100" y1="88" x2="100" y2="96" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="58" x2="62" y2="58" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="130" y1="58" x2="138" y2="58" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="79" y1="37" x2="73" y2="31" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="121" y1="37" x2="127" y2="31" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="88" y="96" width="24" height="6" rx="2" fill="#9B9B93"/>
+  <rect x="90" y="102" width="20" height="4" rx="1" fill="#9B9B93"/>
+  <text x="100" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#374151">Éclairage LED</text>
+  <text x="100" y="136" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#9B9B93">Rexel.fr</text>
+</svg>

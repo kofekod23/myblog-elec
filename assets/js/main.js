@@ -2,6 +2,24 @@
    MYVOLT — Scripts principaux v2
    ========================================= */
 
+/* --- Produits mock pour carrousels --- */
+const PRODUCTS = {
+  'led-tertiaire': [
+    { ref: 'LED-TUB-840', name: 'Tube LED T8 18W 840 IRC≥80 – Philips', image: 'assets/img/product-led.svg', url: 'https://www.rexel.fr/frx/search/?text=tube+LED+T8+18W+840&maxProd=4' },
+    { ref: 'LED-DLD-940', name: 'Downlight LED 20W IRC≥90 3000K – Osram', image: 'assets/img/product-led.svg', url: 'https://www.rexel.fr/frx/search/?text=downlight+LED+20W+IRC90&maxProd=4' },
+    { ref: 'LED-PNL-840', name: 'Panneau LED 36W 4000K IP40 – Ledvance', image: 'assets/img/product-led.svg', url: 'https://www.rexel.fr/frx/search/?text=panneau+LED+36W+4000K&maxProd=4' },
+    { ref: 'LED-INL-865', name: 'Industriel LED Highbay 100W 6500K IP65', image: 'assets/img/product-led.svg', url: 'https://www.rexel.fr/frx/search/?text=highbay+LED+100W+IP65&maxProd=4' },
+    { ref: 'LED-PRJ-840', name: 'Projecteur LED 50W IP65 4000K – Legrand', image: 'assets/img/product-led.svg', url: 'https://www.rexel.fr/frx/search/?text=projecteur+LED+50W+IP65&maxProd=4' }
+  ],
+  's7-1500': [
+    { ref: '6ES7515-2AM02-0AB0', name: 'CPU 1515-2 PN S7-1500 – Siemens', image: 'assets/img/product-siemens.svg', url: 'https://www.rexel.fr/frx/gammes/siemens-distribution-et-contr%C3%B4le/s7-1500' },
+    { ref: '6ES7521-1BH00-0AB0', name: 'Module DI 16×24VDC HF S7-1500', image: 'assets/img/product-siemens.svg', url: 'https://www.rexel.fr/frx/search/?text=S7-1500+DI+16&maxProd=4' },
+    { ref: '6ES7522-1BH01-0AB0', name: 'Module DQ 16×24VDC/0.5A S7-1500', image: 'assets/img/product-siemens.svg', url: 'https://www.rexel.fr/frx/search/?text=S7-1500+DQ+16&maxProd=4' },
+    { ref: '6ES7531-7KF00-0AB0', name: 'Module AI 8×U/I/R/RTD S7-1500', image: 'assets/img/product-siemens.svg', url: 'https://www.rexel.fr/frx/search/?text=S7-1500+AI+8&maxProd=4' },
+    { ref: '6ES7592-1AM00-0XB0', name: 'Frontal câblage S7-1500 40 broches', image: 'assets/img/product-siemens.svg', url: 'https://www.rexel.fr/frx/gammes/siemens-distribution-et-contr%C3%B4le/s7-1500' }
+  ]
+};
+
 /* --- SVG icons (inline) --- */
 const ICONS = {
   bolt: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
@@ -51,11 +69,26 @@ const HEADER_HTML = `
   </div>
 </header>
 
+<nav class="nav-secondary" aria-label="Rubriques thématiques">
+  <div class="nav-secondary-inner">
+    <span class="nav-secondary-label">Thématiques</span>
+    <a href="rubrique-genie-climatique.html" data-nav-sec="genie-climatique">♨️ Génie climatique</a>
+    <a href="rubrique-photovoltaique.html" data-nav-sec="photovoltaique">☀️ Photovoltaïque</a>
+    <a href="rubrique-eclairage.html" data-nav-sec="eclairage">💡 Éclairage</a>
+    <a href="rubrique-securite-communication.html" data-nav-sec="securite">🔒 Sécurité & comm.</a>
+  </div>
+</nav>
+
 <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation mobile">
   <a href="profil-electricien.html">⚡ Électriciens</a>
   <a href="audience-reseaux.html">🔧 Plombiers-chauffagistes</a>
   <a href="audience-integrateurs.html">🏗️ Intégrateurs</a>
   <a href="audience-clients-finaux.html">🤝 Vos partenaires</a>
+  <hr style="border:none;border-top:1px solid rgba(255,255,255,0.15);margin:8px 16px;">
+  <a href="rubrique-genie-climatique.html">♨️ Génie climatique</a>
+  <a href="rubrique-photovoltaique.html">☀️ Photovoltaïque</a>
+  <a href="rubrique-eclairage.html">💡 Éclairage</a>
+  <a href="rubrique-securite-communication.html">🔒 Sécurité & comm.</a>
   <a href="https://www.rexel.fr/frx/" target="_blank" rel="noopener">Webshop ↗</a>
 </nav>
 `;
@@ -136,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReadingProgress();
   initTOC();
   initActiveNav();
+  initProductCarousels();
 });
 
 function injectHeaderFooter() {
@@ -229,6 +263,39 @@ function initTOC() {
   }, { rootMargin: '-10% 0px -80% 0px' });
 
   headings.forEach(h => observer.observe(h));
+}
+
+/* =========================================
+   PRODUCT CAROUSELS
+   ========================================= */
+
+function initProductCarousels() {
+  document.querySelectorAll('.product-carousel[data-products]').forEach(section => {
+    const key = section.dataset.products;
+    const items = PRODUCTS[key];
+    if (!items) return;
+
+    const track = section.querySelector('.product-track');
+    if (!track) return;
+
+    items.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'product-card-mini';
+      card.innerHTML = `
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        <div class="product-card-mini-body">
+          <span class="product-card-mini-ref">${p.ref}</span>
+          <span class="product-card-mini-name">${p.name}</span>
+          <a href="${p.url}" class="product-card-mini-cta" target="_blank" rel="noopener">Voir sur Rexel ↗</a>
+        </div>`;
+      track.appendChild(card);
+    });
+
+    const prevBtn = section.querySelector('.product-carousel-btn[data-dir="prev"]');
+    const nextBtn = section.querySelector('.product-carousel-btn[data-dir="next"]');
+    if (prevBtn) prevBtn.addEventListener('click', () => { track.scrollBy({ left: -200, behavior: 'smooth' }); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { track.scrollBy({ left: 200, behavior: 'smooth' }); });
+  });
 }
 
 /* =========================================
