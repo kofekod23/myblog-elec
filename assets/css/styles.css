@@ -810,6 +810,13 @@ ul, ol { list-style: none; }
   transition: transform var(--t-slow);
 }
 
+/* SVG illustrations : contain pour ne pas rogner le contenu */
+.article-image img[src$=".svg"] {
+  object-fit: contain;
+  padding: 20px;
+  background: var(--gray-50);
+}
+
 .article-card:hover .article-image img {
   transform: scale(1.04);
 }
