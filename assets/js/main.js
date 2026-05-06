@@ -435,7 +435,20 @@ const TAG_LABELS = {
   'outils-rexel': 'Outils Rexel',
   'configurateur': 'Configurateur',
   'reglement-machines': 'Règlement Machines',
-  'led-non-interchangeable': 'LED non interchangeable'
+  'led-non-interchangeable': 'LED non interchangeable',
+  'irve': 'IRVE',
+  'operat': 'OPERAT',
+  'decret-tertiaire': 'Décret tertiaire',
+  'tableauterie': 'Tableauterie',
+  'iec-61439': 'NF EN 61439',
+  'gmao': 'GMAO',
+  'fm': 'FM / Facility Management',
+  'gir': 'GIR / GIN',
+  'eplan': 'EPLAN',
+  'tia-portal': 'TIA Portal',
+  'integration-industrielle': 'Intégration industrielle',
+  'qualification': 'Qualification',
+  'maintenance': 'Maintenance'
 };
 
 function initArticleTags() {
