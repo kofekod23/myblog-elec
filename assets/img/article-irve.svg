@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgIrve" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A90D9"/>
+      <stop offset="100%" stop-color="#7BB3E5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgIrve)"/>
+
+  <!-- Sol -->
+  <rect x="0" y="420" width="800" height="80" fill="#003D7C" opacity="0.3"/>
+  <!-- Marquage place de parking -->
+  <g stroke="#FFFFFF" stroke-width="3" stroke-dasharray="20,10" fill="none" opacity="0.6">
+    <line x1="180" y1="430" x2="180" y2="495"/>
+    <line x1="620" y1="430" x2="620" y2="495"/>
+    <line x1="180" y1="430" x2="620" y2="430"/>
+  </g>
+
+  <!-- Borne de recharge -->
+  <g transform="translate(280, 130)">
+    <!-- Ombre -->
+    <rect x="6" y="6" width="100" height="290" rx="8" fill="#000000" opacity="0.15"/>
+    <!-- Corps -->
+    <rect x="0" y="0" width="100" height="290" rx="8" fill="#1A1A1A"/>
+    <!-- Ecran -->
+    <rect x="15" y="20" width="70" height="80" rx="4" fill="#0066B3"/>
+    <text x="50" y="50" font-family="Open Sans, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">22 kW</text>
+    <text x="50" y="70" font-family="Open Sans, sans-serif" font-size="9" font-weight="400" fill="#FFFFFF" text-anchor="middle">DISPO</text>
+    <circle cx="50" cy="86" r="5" fill="#22C55E"/>
+
+    <!-- Bouton/RFID -->
+    <circle cx="50" cy="130" r="14" fill="#FFFFFF" opacity="0.15"/>
+    <circle cx="50" cy="130" r="9" fill="#FFFFFF" opacity="0.4"/>
+
+    <!-- Prises -->
+    <g transform="translate(20, 165)">
+      <rect x="0" y="0" width="60" height="50" rx="4" fill="#003D7C"/>
+      <circle cx="30" cy="25" r="14" fill="#1A1A1A"/>
+      <circle cx="30" cy="25" r="10" fill="#FFFFFF" opacity="0.3"/>
+      <text x="30" y="68" font-family="Open Sans, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF" text-anchor="middle">TYPE 2</text>
+    </g>
+
+    <!-- Logo IRVE -->
+    <g transform="translate(35, 245)">
+      <rect x="0" y="0" width="30" height="20" rx="2" fill="#FFFFFF"/>
+      <text x="15" y="14" font-family="Open Sans, sans-serif" font-size="9" font-weight="700" fill="#003D7C" text-anchor="middle">IRVE</text>
+    </g>
+  </g>
+
+  <!-- Voiture electrique -->
+  <g transform="translate(440, 280)">
+    <!-- Ombre -->
+    <ellipse cx="120" cy="148" rx="120" ry="6" fill="#000000" opacity="0.2"/>
+    <!-- Corps -->
+    <path d="M 20 140 L 30 90 Q 35 75 50 75 L 100 60 Q 130 55 160 60 L 200 75 Q 215 75 220 90 L 230 140 Z" fill="#FFFFFF"/>
+    <!-- Vitres -->
+    <path d="M 50 90 Q 60 70 90 65 L 130 65 Q 170 65 200 90 L 195 105 L 55 105 Z" fill="#0066B3" opacity="0.6"/>
+    <!-- Cable de charge -->
+    <path d="M 0 130 Q -20 130 -30 110 Q -40 90 -50 80" stroke="#1A1A1A" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <!-- Roues -->
+    <circle cx="60" cy="142" r="22" fill="#1A1A1A"/>
+    <circle cx="60" cy="142" r="11" fill="#FFFFFF" opacity="0.4"/>
+    <circle cx="190" cy="142" r="22" fill="#1A1A1A"/>
+    <circle cx="190" cy="142" r="11" fill="#FFFFFF" opacity="0.4"/>
+    <!-- Trappe charge -->
+    <rect x="-3" y="105" width="14" height="14" rx="2" fill="#0066B3"/>
+  </g>
+
+  <!-- Logo eclair -->
+  <g transform="translate(140, 100)" opacity="0.3" fill="#FFFFFF">
+    <path d="M 0 0 L 20 0 L 10 20 L 25 20 L 5 50 L 15 25 L 0 25 Z"/>
+  </g>
+  <g transform="translate(680, 360)" opacity="0.3" fill="#FFFFFF">
+    <path d="M 0 0 L 20 0 L 10 20 L 25 20 L 5 50 L 15 25 L 0 25 Z"/>
+  </g>
+</svg>

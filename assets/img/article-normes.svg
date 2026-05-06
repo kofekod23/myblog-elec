@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgNormes" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003D7C"/>
+      <stop offset="100%" stop-color="#1A5A9E"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgNormes)"/>
+
+  <!-- Document/Norme -->
+  <g transform="translate(220, 80)">
+    <!-- Ombre -->
+    <rect x="20" y="20" width="320" height="380" rx="4" fill="#000000" opacity="0.15"/>
+    <!-- Document -->
+    <rect x="0" y="0" width="320" height="380" rx="4" fill="#FFFFFF"/>
+
+    <!-- Header rouge style officiel -->
+    <rect x="0" y="0" width="320" height="60" fill="#003D7C"/>
+    <text x="160" y="38" font-family="Open Sans, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">NF C 15-100</text>
+
+    <!-- Lignes de texte -->
+    <g fill="#1A1A1A" opacity="0.7">
+      <rect x="30" y="90" width="200" height="6" rx="1"/>
+      <rect x="30" y="105" width="260" height="6" rx="1"/>
+      <rect x="30" y="120" width="180" height="6" rx="1"/>
+    </g>
+
+    <!-- Section avec icone -->
+    <g transform="translate(30, 150)">
+      <circle cx="15" cy="15" r="14" fill="#003D7C"/>
+      <text x="15" y="20" font-family="Open Sans, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+      <text x="40" y="20" font-family="Open Sans, sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">Section 1 — Généralités</text>
+    </g>
+
+    <g fill="#1A1A1A" opacity="0.5">
+      <rect x="30" y="195" width="240" height="5" rx="1"/>
+      <rect x="30" y="208" width="260" height="5" rx="1"/>
+      <rect x="30" y="221" width="180" height="5" rx="1"/>
+    </g>
+
+    <g transform="translate(30, 250)">
+      <circle cx="15" cy="15" r="14" fill="#003D7C"/>
+      <text x="15" y="20" font-family="Open Sans, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+      <text x="40" y="20" font-family="Open Sans, sans-serif" font-size="14" font-weight="600" fill="#1A1A1A">Section 7 — Locaux humides</text>
+    </g>
+
+    <g fill="#1A1A1A" opacity="0.5">
+      <rect x="30" y="295" width="240" height="5" rx="1"/>
+      <rect x="30" y="308" width="220" height="5" rx="1"/>
+      <rect x="30" y="321" width="160" height="5" rx="1"/>
+    </g>
+
+    <!-- Tampon CONFORME -->
+    <g transform="translate(200, 290) rotate(-12)">
+      <rect x="-50" y="-20" width="100" height="40" rx="4" fill="none" stroke="#003D7C" stroke-width="3"/>
+      <text x="0" y="6" font-family="Open Sans, sans-serif" font-size="14" font-weight="700" fill="#003D7C" text-anchor="middle">CONFORME</text>
+    </g>
+  </g>
+
+  <!-- Petites coches -->
+  <g fill="#FFFFFF" opacity="0.4">
+    <circle cx="100" cy="150" r="20"/>
+    <path d="M 90 150 L 98 158 L 112 144" stroke="#003D7C" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <g fill="#FFFFFF" opacity="0.4">
+    <circle cx="700" cy="380" r="20"/>
+    <path d="M 690 380 L 698 388 L 712 374" stroke="#003D7C" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Editeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (si tu ajoutes du tooling plus tard)
+node_modules/
+dist/
+build/
+
+# Variables d'environnement
+.env
+.env.local
+
+# Dossiers temporaires
+tmp/
+temp/

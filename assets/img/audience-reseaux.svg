@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgReseaux" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003D7C"/>
+      <stop offset="100%" stop-color="#1A5A9E"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgReseaux)"/>
+
+  <!-- Grille de fond subtile -->
+  <g opacity="0.08" stroke="#FFFFFF" stroke-width="1" fill="none">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+
+  <!-- Tableau electrique stylise -->
+  <g transform="translate(280, 130)">
+    <rect x="0" y="0" width="240" height="280" rx="8" fill="#FFFFFF" opacity="0.95"/>
+    <rect x="0" y="0" width="240" height="40" rx="8" fill="#003D7C"/>
+    <text x="120" y="26" font-family="Open Sans, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">TABLEAU ELECTRIQUE</text>
+
+    <!-- Range 1 disjoncteurs -->
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="35" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="70" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="105" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="140" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="175" y="0" width="30" height="50" rx="3" fill="#003D7C"/>
+      <!-- Levers -->
+      <rect x="10" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="45" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="80" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="115" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="150" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="185" y="15" width="10" height="20" rx="1" fill="#FFFFFF"/>
+    </g>
+
+    <!-- Range 2 -->
+    <g transform="translate(20, 130)">
+      <rect x="0" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="35" y="0" width="30" height="50" rx="3" fill="#003D7C"/>
+      <rect x="70" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="105" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="140" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="175" y="0" width="30" height="50" rx="3" fill="#E5E5E0"/>
+      <rect x="10" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="45" y="15" width="10" height="20" rx="1" fill="#FFFFFF"/>
+      <rect x="80" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="115" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="150" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+      <rect x="185" y="15" width="10" height="20" rx="1" fill="#1A1A1A"/>
+    </g>
+
+    <!-- Range 3 -->
+    <g transform="translate(20, 200)">
+      <rect x="0" y="0" width="100" height="50" rx="3" fill="#1A5A9E"/>
+      <rect x="105" y="0" width="100" height="50" rx="3" fill="#E5E5E0"/>
+      <text x="50" y="30" font-family="Open Sans, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">DIFFERENTIEL</text>
+    </g>
+  </g>
+
+  <!-- Eclairs decoratifs -->
+  <g opacity="0.3" fill="#FFFFFF">
+    <path d="M 100 100 L 110 130 L 95 135 L 105 165 L 90 170 L 110 200" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+    <path d="M 700 350 L 690 380 L 705 385 L 695 415 L 710 420" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  </g>
+</svg>
