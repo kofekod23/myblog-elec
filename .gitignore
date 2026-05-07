@@ -35,6 +35,8 @@ build/
 tmp/
 temp/
 
-# Fichiers de développement Claude
+# Fichiers de développement
 .claude/
 docs/superpowers/
+CLAUDE.md
+tasks/

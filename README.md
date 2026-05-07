@@ -106,35 +106,17 @@ Avec VS Code et l'extension `Live Server` de Ritwick Dey : clic droit sur `index
 
 Soit éditer le SVG existant dans `assets/img/`, soit déposer une nouvelle image (jpg/png) dans le dossier et changer le `src` dans le HTML.
 
-## Workflow recommandé : reprise dans Claude Code
-
-Cette maquette est conçue pour être reprise dans Claude Code sur ton Mac. Voici la séquence :
+## Workflow local
 
 ```bash
-# 1. Décompresser le ZIP, se placer dans le dossier
+# Se placer dans le dossier du projet
 cd ~/Documents/projets/myvolt-blog
 
-# 2. Initialiser Git avec ton pseudo
-git init
-git config user.name "kofekod23"
-git config user.email "<ton-email-github>"
-
-# 3. Premier commit
-git add .
-git commit -m "init: maquette blog Myvolt — phase 1 charte + structure"
-
-# 4. Optionnel : créer un repo distant (GitHub)
-# gh repo create myvolt-blog --private
-# git remote add origin git@github.com:kofekod23/myvolt-blog.git
-# git push -u origin main
-
-# 5. Lancer le serveur local
+# Lancer le serveur local
 python3 -m http.server 8000
 ```
 
-À partir de là, utilise Claude Code pour les évolutions : intégration des articles rédigés, création des pages profils manquantes, ajustements design, déploiement.
-
-## Étapes suivantes (à faire dans Claude Code)
+## Étapes suivantes
 
 - [ ] Créer les pages profil pour les 10 profils manquants (uniquement Électricien fait pour l'instant)
 - [ ] Remplacer les SVG d'illustration par les vraies photos quand elles seront prêtes
