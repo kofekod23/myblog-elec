@@ -461,147 +461,168 @@ const ARTICLE_META = [
     title: 'MaPrimeRénov 2026 : ce qui change pour les professionnels RGE',
     tags: ['maprimerenov', 'renovation', 'rge', 'aides-renovation'],
     audience: 'Électriciens · Plombiers-Chauffagistes',
-    date: '6 mai 2026', readTime: '6 min'
+    date: '6 mai 2026', readTime: '6 min',
+    image: 'assets/img/article-maprimerenov.svg'
   },
   {
     href: 'article-assurance-electricien.html',
     title: 'Assurances de l\'électricien indépendant : RC pro, décennale et multirisque',
     tags: ['assurance', 'juridique'],
     audience: 'Électriciens',
-    date: '6 mai 2026', readTime: '7 min'
+    date: '6 mai 2026', readTime: '7 min',
+    image: 'assets/img/article-assurance.svg'
   },
   {
     href: 'article-mandataire-maprimerenov.html',
     title: 'Comment devenir mandataire MaPrimeRénov : procédure, missions et rémunération',
     tags: ['maprimerenov', 'renovation', 'rge'],
     audience: 'Électriciens · Plombiers-Chauffagistes',
-    date: '6 mai 2026', readTime: '8 min'
+    date: '6 mai 2026', readTime: '8 min',
+    image: 'assets/img/article-mandataire.svg'
   },
   {
     href: 'article-eclairage-led-tertiaire.html',
     title: 'Éclairage LED tertiaire : comment choisir l\'IRC, la température de couleur et l\'indice IP',
     tags: ['eclairage-led', 'led', 'irc', 'normes'],
     audience: 'Électriciens · Intégrateurs',
-    date: '6 mai 2026', readTime: '9 min'
+    date: '6 mai 2026', readTime: '9 min',
+    image: 'assets/img/product-led-classique.svg'
   },
   {
     href: 'article-reglement-machines-ue.html',
     title: 'Règlement machines UE 2023/1230 : ce que doit savoir l\'intégrateur industriel',
     tags: ['reglement-machines', 'industrie', 'normes'],
     audience: 'Intégrateurs industriels',
-    date: '6 mai 2026', readTime: '8 min'
+    date: '6 mai 2026', readTime: '8 min',
+    image: 'assets/img/article-normes.svg'
   },
   {
     href: 'article-migration-s7-1500.html',
     title: 'Migration Siemens S7-300 vers S7-1500 : retours terrain et guide pratique',
     tags: ['automatisme', 'industrie', 'siemens'],
     audience: 'Intégrateurs industriels',
-    date: '6 mai 2026', readTime: '10 min'
+    date: '6 mai 2026', readTime: '10 min',
+    image: 'assets/img/product-siemens.svg'
   },
   {
     href: 'article-configurateurs-rexel.html',
     title: 'Configurateurs Rexel : comment gagner du temps sur chaque chiffrage ?',
     tags: ['configurateur', 'outils-rexel'],
     audience: 'Électriciens · Plombiers-Chauffagistes · Intégrateurs',
-    date: '6 mai 2026', readTime: '6 min'
+    date: '6 mai 2026', readTime: '6 min',
+    image: 'assets/img/article-configurateurs.svg'
   },
   {
     href: 'article-led-non-interchangeable.html',
     title: 'LED non interchangeable : comprendre la directive UE 2021/2015',
     tags: ['led', 'led-non-interchangeable', 'normes'],
     audience: 'Électriciens · Intégrateurs',
-    date: '6 mai 2026', readTime: '8 min'
+    date: '6 mai 2026', readTime: '8 min',
+    image: 'assets/img/product-led-classique.svg'
   },
   {
     href: 'article-attestation-capacite.html',
     title: 'Attestation de capacité F-Gas : guide complet pour le climaticien',
     tags: ['f-gas', 'attestation-capacite', 'fluides-frigorigenes'],
     audience: 'Climaticiens',
-    date: '6 mai 2026', readTime: '10 min'
+    date: '6 mai 2026', readTime: '10 min',
+    image: 'assets/img/article-climaticien.svg'
   },
   {
     href: 'article-climaticien-logiciels-calcul.html',
     title: 'Logiciels de calcul CVC : quel outil choisir pour le climaticien ?',
     tags: ['cvc', 'climatisation', 'logiciels-calcul'],
     audience: 'Climaticiens',
-    date: '6 mai 2026', readTime: '8 min'
+    date: '6 mai 2026', readTime: '8 min',
+    image: 'assets/img/article-climaticien.svg'
   },
   {
     href: 'article-electricien-auto-entrepreneur.html',
     title: 'Devenir électricien auto-entrepreneur : étapes et démarches 2026',
     tags: ['juridique', 'auto-entrepreneur'],
     audience: 'Électriciens',
-    date: '6 mai 2026', readTime: '12 min'
+    date: '6 mai 2026', readTime: '12 min',
+    image: 'assets/img/article-electricien.svg'
   },
   {
     href: 'article-installateur-irve.html',
     title: 'Comment devenir installateur IRVE en 2026 : qualification, recyclage et réglementation',
     tags: ['irve', 'qualification', 'tertiaire'],
     audience: 'Intégrateurs — Installateur tertiaire',
-    date: '6 mai 2026', readTime: '10 min'
+    date: '6 mai 2026', readTime: '10 min',
+    image: 'assets/img/article-irve.svg'
   },
   {
     href: 'article-plateforme-operat.html',
     title: 'Plateforme OPERAT : déclarer et suivre les consommations tertiaires en 2026',
     tags: ['operat', 'decret-tertiaire', 'tertiaire'],
     audience: 'Intégrateurs — Installateur tertiaire',
-    date: '6 mai 2026', readTime: '8 min'
+    date: '6 mai 2026', readTime: '8 min',
+    image: 'assets/img/article-normes.svg'
   },
   {
     href: 'article-societe-integration.html',
     title: 'Créer une société d\'intégration industrielle : étapes, statuts et qualifications',
     tags: ['integration-industrielle', 'industrie', 'juridique'],
     audience: 'Intégrateurs — Installateur industriel',
-    date: '6 mai 2026', readTime: '9 min'
+    date: '6 mai 2026', readTime: '9 min',
+    image: 'assets/img/audience-integrateurs.svg'
   },
   {
     href: 'article-tia-portal.html',
     title: 'TIA Portal : bonnes pratiques de programmation pour intégrateurs industriels',
     tags: ['tia-portal', 'automatisme', 'siemens'],
     audience: 'Intégrateurs — Installateur industriel',
-    date: '6 mai 2026', readTime: '11 min'
+    date: '6 mai 2026', readTime: '11 min',
+    image: 'assets/img/product-siemens.svg'
   },
   {
     href: 'article-metier-gir.html',
     title: 'Le métier de GIR / GIN / FM en 2026 : périmètre, organisation et enjeux',
     tags: ['gir', 'fm', 'maintenance'],
     audience: 'Intégrateurs — GIR / GIN / FM',
-    date: '6 mai 2026', readTime: '8 min'
+    date: '6 mai 2026', readTime: '8 min',
+    image: 'assets/img/audience-integrateurs.svg'
   },
   {
     href: 'article-choisir-gmao.html',
     title: 'Comment choisir sa GMAO pour la maintenance multi-sites ?',
     tags: ['gmao', 'fm', 'maintenance'],
     audience: 'Intégrateurs — GIR / GIN / FM',
-    date: '6 mai 2026', readTime: '9 min'
+    date: '6 mai 2026', readTime: '9 min',
+    image: 'assets/img/audience-integrateurs.svg'
   },
   {
     href: 'article-devenir-tableautier.html',
     title: 'Devenir tableautier : formations, qualifications et débouchés en 2026',
     tags: ['tableauterie', 'qualification', 'tertiaire'],
     audience: 'Intégrateurs — Tableautier tertiaire',
-    date: '6 mai 2026', readTime: '10 min'
+    date: '6 mai 2026', readTime: '10 min',
+    image: 'assets/img/article-normes.svg'
   },
   {
     href: 'article-logiciels-armoires.html',
     title: 'Logiciels de conception d\'armoires électriques : comparatif EPLAN, SEE Electrical, Caneco',
     tags: ['eplan', 'tableauterie', 'logiciels-calcul'],
     audience: 'Intégrateurs — Tableautier tertiaire',
-    date: '6 mai 2026', readTime: '9 min'
+    date: '6 mai 2026', readTime: '9 min',
+    image: 'assets/img/article-normes.svg'
   },
   {
     href: 'article-tableautier-industriel.html',
     title: 'Tableautier industriel : spécificités, normes IEC 61439 et contraintes de production',
     tags: ['tableauterie', 'iec-61439', 'industrie'],
     audience: 'Intégrateurs — Tableautier industriel',
-    date: '6 mai 2026', readTime: '11 min'
+    date: '6 mai 2026', readTime: '11 min',
+    image: 'assets/img/article-normes.svg'
   },
   {
     href: 'article-eplan-pro-panel.html',
     title: 'EPLAN Pro Panel 3D : guide de prise en main pour tableautiers industriels',
     tags: ['eplan', 'tableauterie', 'industrie'],
     audience: 'Intégrateurs — Tableautier industriel',
-    date: '6 mai 2026', readTime: '12 min'
+    date: '6 mai 2026', readTime: '12 min',
+    image: 'assets/img/product-siemens.svg'
   }
 ];
 
