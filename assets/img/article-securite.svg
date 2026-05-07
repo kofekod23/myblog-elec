@@ -22,5 +22,5 @@
   <!-- Caméra mini interphone -->
   <rect x="83" y="50" width="12" height="6" rx="1" fill="#003D7C" opacity="0.1" stroke="#003D7C" stroke-width="1"/>
   <circle cx="89" cy="53" r="2" fill="#003D7C" opacity="0.3"/>
-  <text x="60" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#003D7C" font-weight="600">Sécurité & Communication</text>
+  <text x="60" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#003D7C" font-weight="600">Sécurité &amp; Communication</text>
 </svg>
