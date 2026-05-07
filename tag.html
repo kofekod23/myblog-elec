@@ -4,21 +4,23 @@
   <meta charset="UTF-8">
   <title>Articles — MyVolt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body data-nav="">
 
   <div id="site-header"></div>
 
   <nav class="breadcrumb">
     <a href="index.html">Accueil</a><span class="sep">›</span>
-    <span id="tag-breadcrumb">Tag</span>
+    <span>Tags</span><span class="sep">›</span>
+    <span id="tag-breadcrumb">—</span>
   </nav>
 
   <section class="page-header">
     <div class="page-header-inner">
-      <span class="badge-aud electriciens">Thématique</span>
+      <span class="badge-aud" id="tag-badge" style="background:var(--rexel-blue-tint);color:var(--rexel-blue);">Thématique</span>
       <h1 id="tag-title">Articles</h1>
       <p class="lede" id="tag-lede">Tous les articles sur ce thème.</p>
     </div>
@@ -42,10 +44,49 @@
       document.title = label + ' — MyVolt';
       document.getElementById('tag-breadcrumb').textContent = label;
       document.getElementById('tag-title').textContent = label;
-      document.getElementById('tag-lede').textContent = 'Tous les articles MyVolt sur le thème « ' + label + ' ».';
+      document.getElementById('tag-badge').textContent = label;
+      document.getElementById('tag-lede').textContent =
+        'Tous les articles MyVolt sur le thème « ' + label + ' ».';
 
-      // Mock articles for this tag (demo only - real implementation would use API or static index)
-      document.getElementById('tag-articles-grid').innerHTML = '<p style="color:var(--gray-500);font-size:14px;padding:40px 0;">Cette page regroupe automatiquement les articles tagués « ' + label + ' ». En production, le contenu serait alimenté dynamiquement.</p>';
+      const grid = document.getElementById('tag-articles-grid');
+
+      if (typeof ARTICLE_META === 'undefined') {
+        grid.innerHTML = '<p style="color:var(--gray-500);padding:40px 0;">Chargement impossible.</p>';
+        return;
+      }
+
+      const articles = ARTICLE_META.filter(a => a.tags.includes(tag));
+
+      if (!articles.length) {
+        grid.innerHTML = '<p style="color:var(--gray-500);padding:40px 0;">Aucun article sur ce thème pour le moment.</p>';
+        return;
+      }
+
+      grid.innerHTML = articles.map(a => {
+        const tagLinks = a.tags.map(t => {
+          const tl = (typeof TAG_LABELS !== 'undefined' && TAG_LABELS[t]) ? TAG_LABELS[t] : t;
+          return '<a href="tag.html?tag=' + encodeURIComponent(t) + '" class="article-tag">' + tl + '</a>';
+        }).join('');
+
+        return [
+          '<a href="' + a.href + '" class="article-card">',
+          '  <div class="article-body">',
+          '    <div class="article-body-top">',
+          '      <div class="article-card-meta">',
+          '        <span class="article-card-aud">' + a.audience + '</span>',
+          '        <span class="article-card-date">' + a.date + '</span>',
+          '      </div>',
+          '      <h3 class="article-card-title">' + a.title + '</h3>',
+          '    </div>',
+          '    <div class="article-tags">' + tagLinks + '</div>',
+          '    <div class="article-card-footer">',
+          '      <span class="read-more">Lire l\'article</span>',
+          '      <span class="read-time">' + a.readTime + '</span>',
+          '    </div>',
+          '  </div>',
+          '</a>'
+        ].join('\n');
+      }).join('\n');
     });
   </script>
 
