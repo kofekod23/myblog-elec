@@ -34,3 +34,7 @@ build/
 # Dossiers temporaires
 tmp/
 temp/
+
+# Fichiers de développement Claude
+.claude/
+docs/superpowers/
